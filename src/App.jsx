@@ -5,6 +5,10 @@ import ProjectCard from "./components/ProjectCard";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const totalTechnologies = new Set(
+    projects.flatMap((project) => project.technologies),
+  ).size;
+  const currentYear = new Date().getFullYear();
 
   const semesters = [
     "1º Semestre",
@@ -22,27 +26,29 @@ function App() {
 
   return (
     <>
-      {/* Header / Sobre */}
       <header className="header">
+        <div className="header-glow" aria-hidden="true" />
         <div className="header-content">
           <div className="profile-section">
             <img
-              src="https://via.placeholder.com/150?text=Sua+Foto"
+              src="https://ui-avatars.com/api/?name=Seu+Nome&background=0b1c35&color=fafafa&size=256"
               alt="Foto de perfil"
               className="profile-photo"
             />
             <div className="profile-info">
+              <span className="availability">Disponível para estágio</span>
               <h1 className="name">Seu Nome Aqui</h1>
               <p className="title">
-                Estudante de Análise e Desenvolvimento de Sistemas - FATEC
+                Estudante de Análise e Desenvolvimento de Sistemas | FATEC
               </p>
               <p className="bio">
-                Apaixonado por tecnologia e desenvolvimento web. Sempre buscando
-                aprender novas ferramentas e criar soluções inovadoras.
+                Portfólio acadêmico com projetos desenvolvidos ao longo da
+                graduação, com foco em engenharia de software, desenvolvimento
+                web e soluções orientadas a dados.
               </p>
               <div className="contact-info">
                 <a href="mailto:seu.email@example.com" className="contact-link">
-                  📧 seu.email@example.com
+                  Email
                 </a>
                 <a
                   href="https://linkedin.com"
@@ -50,7 +56,7 @@ function App() {
                   rel="noopener noreferrer"
                   className="contact-link"
                 >
-                  💼 LinkedIn
+                  LinkedIn
                 </a>
                 <a
                   href="https://github.com"
@@ -58,20 +64,36 @@ function App() {
                   rel="noopener noreferrer"
                   className="contact-link"
                 >
-                  🐙 GitHub
+                  GitHub
                 </a>
+              </div>
+              <div className="stats-grid">
+                <article className="stat-card">
+                  <span className="stat-number">{projects.length}</span>
+                  <span className="stat-label">Projetos registrados</span>
+                </article>
+                <article className="stat-card">
+                  <span className="stat-number">{semesters.length}</span>
+                  <span className="stat-label">Semestres mapeados</span>
+                </article>
+                <article className="stat-card">
+                  <span className="stat-number">{totalTechnologies}</span>
+                  <span className="stat-label">Tecnologias aplicadas</span>
+                </article>
               </div>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Seção de Projetos */}
       <main className="main-content">
         <section className="projects-section">
           <h2 className="section-title">Meus Projetos</h2>
+          <p className="section-subtitle">
+            Filtre por semestre para visualizar a evolução técnica durante a
+            formação.
+          </p>
 
-          {/* Filtros por Semestre */}
           <div className="filters">
             <button
               className={`filter-btn ${activeFilter === "all" ? "active" : ""}`}
@@ -90,14 +112,12 @@ function App() {
             ))}
           </div>
 
-          {/* Grid de Projetos */}
           <div className="projects-grid">
             {filteredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
 
-          {/* Mensagem quando não há projetos */}
           {filteredProjects.length === 0 && (
             <div className="empty-state">
               <p>Nenhum projeto encontrado para este semestre.</p>
@@ -106,9 +126,11 @@ function App() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+        <p>
+          &copy; {currentYear} Seu Nome | Portfólio acadêmico de Análise e
+          Desenvolvimento de Sistemas
+        </p>
       </footer>
     </>
   );

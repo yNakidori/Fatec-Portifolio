@@ -1,4 +1,6 @@
 function ProjectCard({ project }) {
+  const hasLink = project.link && project.link !== "#";
+
   return (
     <div className="project-card">
       <div className="project-image">
@@ -17,9 +19,18 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        <a href={project.link} className="project-link">
-          Ver Projeto →
-        </a>
+        {hasLink ? (
+          <a
+            href={project.link}
+            className="project-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver projeto
+          </a>
+        ) : (
+          <span className="project-link disabled">Link em atualização</span>
+        )}
       </div>
     </div>
   );
