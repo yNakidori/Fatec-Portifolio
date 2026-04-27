@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { projects } from "./data/projects";
 import ProjectCard from "./components/ProjectCard";
+import profilepicture from "./images/pfp.png";
 
 function App() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -31,13 +32,13 @@ function App() {
         <div className="header-content">
           <div className="profile-section">
             <img
-              src="https://ui-avatars.com/api/?name=Seu+Nome&background=0b1c35&color=fafafa&size=256"
+              src={profilepicture}
               alt="Foto de perfil"
               className="profile-photo"
             />
             <div className="profile-info">
-              <span className="availability">Disponível para estágio</span>
-              <h1 className="name">Seu Nome Aqui</h1>
+              <span className="availability">Disponível para contrato</span>
+              <h1 className="name">Leandro Reis Santana</h1>
               <p className="title">
                 Estudante de Desenvolvimento de Software Multiplataforma | FATEC
               </p>
@@ -47,11 +48,14 @@ function App() {
                 web e soluções orientadas a dados.
               </p>
               <div className="contact-info">
-                <a href="mailto:seu.email@example.com" className="contact-link">
+                <a
+                  href="mailto:leandro.santana10@fatec.sp.gov.br"
+                  className="contact-link"
+                >
                   Email
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/leandro-santana-bb7073273/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
@@ -59,7 +63,7 @@ function App() {
                   LinkedIn
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/yNakidori"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
