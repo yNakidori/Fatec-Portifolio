@@ -316,12 +316,18 @@ body {
 }
 
 .project-link {
-  margin-top: auto;
-  padding-top: 14px;
   color: var(--brand);
   font-size: 0.92rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.project-links {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .project-link:hover {

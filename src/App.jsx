@@ -39,7 +39,7 @@ function App() {
               <span className="availability">Disponível para estágio</span>
               <h1 className="name">Seu Nome Aqui</h1>
               <p className="title">
-                Estudante de Análise e Desenvolvimento de Sistemas | FATEC
+                Estudante de Desenvolvimento de Software Multiplataforma | FATEC
               </p>
               <p className="bio">
                 Portfólio acadêmico com projetos desenvolvidos ao longo da
@@ -128,8 +128,9 @@ function App() {
 
       <footer className="footer">
         <p>
-          &copy; {currentYear} Seu Nome | Portfólio acadêmico de Análise e
-          Desenvolvimento de Sistemas
+          &copy; {currentYear} Leandro Reis Santana | Portfólio acadêmico de
+          Desenvolvimento de Software Multiplataforma - FATEC. Todos os direitos
+          reservados.
         </p>
       </footer>
     </>

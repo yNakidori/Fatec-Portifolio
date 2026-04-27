@@ -1,153 +1,86 @@
+import semester1Image from "../images/1.png";
+import semester2Image from "../images/2.png";
+import semester3Image from "../images/3.png";
+import semester4Image from "../images/4.png";
+import semester5Image from "../images/5.png";
+import semester6Image from "../images/6.png";
+
 export const projects = [
   // 1º Semestre
   {
     id: 1,
-    title: "Projeto Web Inicial",
+    title: "Portal 360",
     semester: "1º Semestre",
     description:
-      "Primeiro projeto web com HTML, CSS e JavaScript. Uma página responsiva com navegação.",
+      "Projeto web com HTML, CSS e JavaScript. Uma página responsiva com navegação com tema: sustentabilidade e causas sociais.",
     technologies: ["HTML5", "CSS3", "JavaScript"],
-    image: "https://via.placeholder.com/300x200?text=Projeto+1",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "Calculadora Interativa",
-    semester: "1º Semestre",
-    description:
-      "Calculadora desenvolvida com JavaScript vanilla. Suporta operações básicas e científicas.",
-    technologies: ["JavaScript", "HTML5", "CSS3"],
-    image: "https://via.placeholder.com/300x200?text=Calculadora",
-    link: "#",
+    image: semester1Image,
+    deployLink: "portal-360.vercel.app",
+    repoLink: "https://github.com/yNakidori/Portal-360",
   },
 
   // 2º Semestre
   {
-    id: 3,
+    id: 2,
     title: "Landing Page - E-commerce",
     semester: "2º Semestre",
     description:
       "Página de vendas responsiva com carrousel de produtos e integração de formulários.",
     technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
-    image: "https://via.placeholder.com/300x200?text=E-commerce",
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Jogo da Memória",
-    semester: "2º Semestre",
-    description:
-      "Jogo interativo desenvolvido com JavaScript. Inclui diferentes níveis de dificuldade.",
-    technologies: ["JavaScript", "HTML5", "CSS3"],
-    image: "https://via.placeholder.com/300x200?text=Jogo+Memoria",
-    link: "#",
+    image: semester2Image,
+    deployLink: "bazar-deploy.vercel.app",
+    repoLink: "https://github.com/yNakidori/Bazar-Deploy",
   },
 
   // 3º Semestre
   {
-    id: 5,
-    title: "API REST com Node.js",
+    id: 3,
+    title: "Projeto para barbearias",
     semester: "3º Semestre",
     description:
-      "API RESTful desenvolvida com Express.js e MongoDB. Inclui autenticação e validação.",
+      "Projeto backend para gerenciamento de agendamento de barbearias. API RESTful com autenticação JWT.",
     technologies: ["Node.js", "Express", "MongoDB", "JWT"],
-    image: "https://via.placeholder.com/300x200?text=API+Node",
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Dashboard React",
-    semester: "3º Semestre",
-    description:
-      "Dashboard interativo com gráficos e dados em tempo real usando React e Chart.js.",
-    technologies: ["React", "JavaScript", "Chart.js", "CSS3"],
-    image: "https://via.placeholder.com/300x200?text=Dashboard",
-    link: "#",
-  },
-  {
-    id: 7,
-    title: "Sistema de Tarefas",
-    semester: "3º Semestre",
-    description:
-      "Aplicação de gerenciamento de tarefas com armazenamento local e filtros avançados.",
-    technologies: ["React", "LocalStorage", "CSS Modules"],
-    image: "https://via.placeholder.com/300x200?text=To-Do+App",
-    link: "#",
+    image: semester3Image,
+    deployLink: "barberfashion.vercel.app",
+    repoLink: "https://github.com/GrupoZonaLeste/BarberFashion",
   },
 
   // 4º Semestre
   {
-    id: 8,
-    title: "Aplicação Full Stack",
+    id: 4,
+    title: "AKSTur - Aplicação Full Stack",
     semester: "4º Semestre",
     description:
-      "Aplicação completa com frontend React e backend Node.js. Gerenciamento de usuários.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Express"],
-    image: "https://via.placeholder.com/300x200?text=Full+Stack",
-    link: "#",
-  },
-  {
-    id: 9,
-    title: "Sistema de Login Seguro",
-    semester: "4º Semestre",
-    description:
-      "Sistema de autenticação e autorização com hash de senhas e tokens JWT.",
-    technologies: ["Node.js", "Express", "PostgreSQL", "bcrypt", "JWT"],
-    image: "https://via.placeholder.com/300x200?text=Auth+System",
-    link: "#",
+      "Aplicação completa com frontend React e backend Node.js. Agencia de viagens completamente funcional.",
+    technologies: ["React", "Node.js", "Firebase", "Express"],
+    image: semester4Image,
+    deployLink: "https://www.akstur.com.br",
+    repoLink: "https://github.com/yNakidori/aksTour",
   },
 
   // 5º Semestre
   {
-    id: 10,
-    title: "E-commerce Completo",
+    id: 5,
+    title: "Aplicativo gestor de alimentação e rotina",
     semester: "5º Semestre",
     description:
-      "Plataforma de e-commerce com carrinho de compras, pagamento e painel administrativo.",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Redux"],
-    image: "https://via.placeholder.com/300x200?text=E-commerce",
-    link: "#",
-  },
-  {
-    id: 11,
-    title: "App Mobile Híbrido",
-    semester: "5º Semestre",
-    description:
-      "Aplicação mobile desenvolvida com React Native para iOS e Android.",
-    technologies: ["React Native", "JavaScript", "Firebase"],
-    image: "https://via.placeholder.com/300x200?text=Mobile+App",
-    link: "#",
-  },
-  {
-    id: 12,
-    title: "Rede Social Mini",
-    semester: "5º Semestre",
-    description:
-      "Rede social simplificada com posts, comentários, likes e perfil de usuário.",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-    image: "https://via.placeholder.com/300x200?text=Social+Network",
-    link: "#",
+      "Aplicativo para gerenciamento de alimentação e rotina. Permite cadastro de refeições, atividades físicas e monitoramento de hábitos saudáveis.",
+    technologies: ["ReactNative", "Node.js", "Firebase", "Redux"],
+    image: semester5Image,
+    deployLink: "#",
+    repoLink: "https://github.com/yNakidori/cozinha.IA",
   },
 
   // 6º Semestre
   {
-    id: 13,
-    title: "Projeto Final - Plataforma Educativa",
+    id: 6,
+    title: "Projeto Final - HumidWatch",
     semester: "6º Semestre",
     description:
-      "Plataforma de ensino online com vídeos, quizzes, fóruns e certificados. Trabalho de conclusão de curso.",
+      "Aplicativo de monitoramento de umidade para ambientes internos. Utiliza sensores IoT para coletar dados e exibir em tempo real em um dashboard web.",
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"],
-    image: "https://via.placeholder.com/300x200?text=Plataforma+EAD",
-    link: "#",
-  },
-  {
-    id: 14,
-    title: "Dashboard Administrativo",
-    semester: "6º Semestre",
-    description:
-      "Sistema de administração com relatórios, gráficos avançados e gerenciamento de dados.",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-    image: "https://via.placeholder.com/300x200?text=Admin+Dashboard",
-    link: "#",
+    image: semester6Image,
+    deployLink: "#",
+    repoLink: "https://github.com/yNakidori/HumidWatch",
   },
 ];

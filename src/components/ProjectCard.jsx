@@ -1,5 +1,27 @@
 function ProjectCard({ project }) {
-  const hasLink = project.link && project.link !== "#";
+  const normalizeUrl = (value) => {
+    const raw = typeof value === "string" ? value.trim() : "";
+
+    if (!raw || raw === "#") {
+      return "";
+    }
+
+    return /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
+  };
+
+  const isRepositoryUrl = (url) =>
+    /github\.com|gitlab\.com|bitbucket\.org/i.test(url);
+
+  const legacyLink = normalizeUrl(project.link);
+  const deployUrl = normalizeUrl(project.deployLink);
+  const repoUrl = normalizeUrl(project.repoLink);
+
+  const finalDeployUrl =
+    deployUrl || (legacyLink && !isRepositoryUrl(legacyLink) ? legacyLink : "");
+  const finalRepoUrl =
+    repoUrl || (legacyLink && isRepositoryUrl(legacyLink) ? legacyLink : "");
+
+  const hasAnyLink = Boolean(finalDeployUrl || finalRepoUrl);
 
   return (
     <div className="project-card">
@@ -19,15 +41,29 @@ function ProjectCard({ project }) {
           ))}
         </div>
 
-        {hasLink ? (
-          <a
-            href={project.link}
-            className="project-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver projeto
-          </a>
+        {hasAnyLink ? (
+          <div className="project-links">
+            {finalDeployUrl && (
+              <a
+                href={finalDeployUrl}
+                className="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver deploy
+              </a>
+            )}
+            {finalRepoUrl && (
+              <a
+                href={finalRepoUrl}
+                className="project-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver repositorio
+              </a>
+            )}
+          </div>
         ) : (
           <span className="project-link disabled">Link em atualização</span>
         )}
